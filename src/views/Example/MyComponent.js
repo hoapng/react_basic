@@ -3,27 +3,48 @@ import React from "react";
 class Car extends React.Component {
   // let name = '123';
   state = {
-    name: 'Hoa'
+    firstName: '',
+    lastName: ''
   }
-  click = () => {
-    alert('Click')
+  handleChangeFirstName = (event) => {
+    this.setState({
+        firstName: event.target.value
+    })
   }
-  change = (event) => {
-    this.setState({name: event.target.value})
+  handleChangeLastName = (event) => {
+    this.setState({
+        lastName: event.target.value
+    })
+  }
+  handleSubmit = (event) => {
+    event.preventDefault()
+    console.log('>>> check data input: ', this.state)
+    alert('click')
   }
   render() {
     
     return (
       <>
-      <div className="first">
-        <input value={this.state.name} type="text" onChange={(event) => this.change(event)}></input>
-        Hi, I am {this.state.name}!
-        </div>
-      <div className="second">
-        <button onClick={this.click}>Click</button>
-      </div>
+        <form>
+          <label htmlFor="fname">First name:</label><br />
+          <input
+            type="text"
+            value={this.state.firstName}
+            onChange={(event) => this.handleChangeFirstName(event)}
+          />
+          <br />
+          <label htmlFor="lname">Last name:</label><br />
+          <input
+            type="text"
+            value={this.state.lastName}
+            onChange={(event) => this.handleChangeLastName(event)}
+          />
+          <br /><br />
+          <input type="submit"
+            onClick={(event) => this.handleSubmit(event)} />
+        </form>
       </>
     );
   }
 }
-export default Car;
+export default Car
