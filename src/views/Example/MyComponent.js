@@ -1,4 +1,5 @@
 import { type } from "@testing-library/user-event/dist/type";
+import Child from "./ChildComponet";
 import React from "react";
 class Car extends React.Component {
   // let name = '123';
@@ -43,6 +44,7 @@ class Car extends React.Component {
           <input type="submit"
             onClick={(event) => this.handleSubmit(event)} />
         </form>
+        <Child name = {'one'} age = {'25'}></Child>
       </>
     );
   }
