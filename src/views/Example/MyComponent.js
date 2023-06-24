@@ -5,7 +5,11 @@ class Car extends React.Component {
   // let name = '123';
   state = {
     firstName: '',
-    lastName: ''
+    lastName: '',
+    arrJobs: [
+      {id: '1', name: 'Dev'},
+      {id: '2', name: 'Tester'},
+    ]
   }
   handleChangeFirstName = (event) => {
     this.setState({
@@ -44,7 +48,11 @@ class Car extends React.Component {
           <input type="submit"
             onClick={(event) => this.handleSubmit(event)} />
         </form>
-        <Child name = {'one'} age = {'25'}></Child>
+        <Child 
+          name = {this.state.firstName} 
+          age = {'25'} 
+          address = {'Hà Nội'}
+          arrJobs = {this.state.arrJobs}></Child>
       </>
     );
   }

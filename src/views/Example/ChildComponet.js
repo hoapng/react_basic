@@ -24,10 +24,21 @@ class Child extends React.Component {
   render() {
     // let name = this.props.name;
     // let age = this.props.age;
-    let {name, age} = this.props;
+    let {name, age, address, arrJobs} = this.props;
     return (
       <>
-        <div>Child: {name} - {age}</div>
+        <div>Child: {name} - {age} - {address}</div>
+        <dic className = 'jobs-list'>
+          {
+            arrJobs.map((item, index) => {
+              return (
+                <div>
+                  {item.id}.{item.name}
+                </div>
+              )
+            })
+          }
+        </dic>
       </>
     );
   }
