@@ -1,36 +1,38 @@
 import { type } from "@testing-library/user-event/dist/type";
 import Child from "./ChildComponet";
 import React from "react";
+import AddComponent from "./AddComponent"
 class Car extends React.Component {
   // let name = '123';
   state = {
-    firstName: '',
-    lastName: '',
+    // firstName: '',
+    // lastName: '',
     arrJobs: [
-      {id: '1', name: 'Dev'},
-      {id: '2', name: 'Tester'},
+      {id: '1', name: 'Dev', salary: '500'},
+      {id: '2', name: 'Tester', salary: '1000'},
     ]
   }
-  handleChangeFirstName = (event) => {
-    this.setState({
-        firstName: event.target.value
-    })
-  }
-  handleChangeLastName = (event) => {
-    this.setState({
-        lastName: event.target.value
-    })
-  }
-  handleSubmit = (event) => {
-    event.preventDefault()
-    console.log('>>> check data input: ', this.state)
-    alert('click')
-  }
+  // handleChangeFirstName = (event) => {
+  //   this.setState({
+  //       firstName: event.target.value
+  //   })
+  // }
+  // handleChangeLastName = (event) => {
+  //   this.setState({
+  //       lastName: event.target.value
+  //   })
+  // }
+  // handleSubmit = (event) => {
+  //   event.preventDefault()
+  //   console.log('>>> check data input: ', this.state)
+  //   alert('click')
+  // }
   render() {
     
     return (
       <>
-        <form>
+      <AddComponent></AddComponent>
+        {/* <form>
           <label htmlFor="fname">First name:</label><br />
           <input
             type="text"
@@ -47,7 +49,7 @@ class Car extends React.Component {
           <br /><br />
           <input type="submit"
             onClick={(event) => this.handleSubmit(event)} />
-        </form>
+        </form> */}
         <Child 
           name = {this.state.firstName} 
           age = {'25'} 
