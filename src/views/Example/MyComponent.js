@@ -14,8 +14,18 @@ class Car extends React.Component {
   }
   addNewJob = (job) =>{
     console.log('>>>Check:',job)
+    let curentJob = this.state.arrJobs;
+    curentJob.push(job)
     this.setState({
-      arrJobs: [...this.state.arrJobs, job]
+      // arrJobs: [...this.state.arrJobs, job]
+      arrJobs: curentJob
+    })
+  }
+  deleteAJob = (job) => {
+    let curentJob = this.state.arrJobs;
+    curentJob = curentJob.filter(item => item.id !== job.id);
+    this.setState({
+      arrJobs: curentJob
     })
   }
   // handleChangeFirstName = (event) => {
@@ -60,7 +70,8 @@ class Car extends React.Component {
           name = {'Hoa'} 
           age = {'25'} 
           address = {'Hà Nội'}
-          arrJobs = {this.state.arrJobs}></Child>
+          arrJobs = {this.state.arrJobs}
+          deleteAJob = {this.deleteAJob}></Child>
       </>
     );
   }
