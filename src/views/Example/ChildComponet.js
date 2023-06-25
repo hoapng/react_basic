@@ -34,8 +34,8 @@ class Child extends React.Component {
     let {showJobs} = this.state
     return (
       <>
-      {showJobs === false && <div><button onClick={() => this.handleShowHide()}>Show</button></div>}
-        <div>Child: {name} - {age} - {address}</div>
+        {/* <div>Child: {name} - {age} - {address}</div> */}
+        {showJobs === false && <div><button onClick={() => this.handleShowHide()}>Show</button></div>}
         {showJobs &&
         <>
           <div className = 'jobs-list'>
@@ -43,7 +43,7 @@ class Child extends React.Component {
             arrJobs.map((item, index) => {
               return (
                 <div>
-                  {item.id}.{item.name}
+                  {item.id} - {item.title} - {item.salary}
                 </div>
               )
             })

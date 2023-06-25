@@ -8,9 +8,15 @@ class Car extends React.Component {
     // firstName: '',
     // lastName: '',
     arrJobs: [
-      {id: '1', name: 'Dev', salary: '500'},
-      {id: '2', name: 'Tester', salary: '1000'},
+      {id: '1', title: 'Dev', salary: '500'},
+      {id: '2', title: 'Tester', salary: '1000'},
     ]
+  }
+  addNewJob = (job) =>{
+    console.log('>>>Check:',job)
+    this.setState({
+      arrJobs: [...this.state.arrJobs, job]
+    })
   }
   // handleChangeFirstName = (event) => {
   //   this.setState({
@@ -31,7 +37,7 @@ class Car extends React.Component {
     
     return (
       <>
-      <AddComponent></AddComponent>
+      <AddComponent addNewJob = {this.addNewJob}></AddComponent>
         {/* <form>
           <label htmlFor="fname">First name:</label><br />
           <input
@@ -51,7 +57,7 @@ class Car extends React.Component {
             onClick={(event) => this.handleSubmit(event)} />
         </form> */}
         <Child 
-          name = {this.state.firstName} 
+          name = {'Hoa'} 
           age = {'25'} 
           address = {'Hà Nội'}
           arrJobs = {this.state.arrJobs}></Child>

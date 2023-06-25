@@ -17,8 +17,21 @@ class AddComponent extends React.Component{
       }
       handleSubmit = (event) => {
         event.preventDefault()
+        if(!this.state.title || !this.state.salary){
+            alert('Missing');
+            return;
+        }
         console.log('>>> check data input: ', this.state)
         // alert('click')
+        this.props.addNewJob({
+            id: Math.floor(Math.random() * 100),
+            title: this.state.title,
+            salary: this.state.salary
+        })
+        this.setState({
+            title: '',
+            salary: ''
+        })
       }
     render(){
         return(
