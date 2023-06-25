@@ -1,6 +1,7 @@
 import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 import "./demo.css"
+import "./demo.scss"
 class Child extends React.Component {
   // let name = '123';
   state = {
@@ -62,7 +63,7 @@ class Child extends React.Component {
           }
           {/* <button onClick={() => this.handleShowHide()}>Hide</button> */}
         </div>
-        <button onClick={() => this.handleShowHide()}>Hide</button>
+        <button className="btn-hide" onClick={() => this.handleShowHide()}>Hide</button>
         </>
         }
         
