@@ -60,6 +60,9 @@ class ListToDo extends React.Component {
         let isEmptyOjb = Object.keys(edit).length ===0; 
         return(
             <>
+            <p>
+                Simple To do App
+                </p>
                 <div className="list-todo-container">
                     <Add addNewToDo = {this.addNewToDo}/>
                     <div className="list-todo-content">
