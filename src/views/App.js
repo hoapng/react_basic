@@ -10,7 +10,7 @@ import Home from './Example/Home';
 
 import {
   BrowserRouter,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
@@ -24,17 +24,11 @@ function App() {
         <Nav/>
 
 
-        <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/todo">
-              <ListToDo />
-            </Route>
-            <Route path="/about">
-              <Car />
-            </Route>
-          </Switch>
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/todo" element={<ListToDo />} />
+        <Route path="/about" element={<Car />} />
+          </Routes>
       </header>
       <ToastContainer
         position="top-right"
