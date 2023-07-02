@@ -14,6 +14,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import ListUsers from './users/ListUsers';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/todo" element={<ListToDo />} />
         <Route path="/about" element={<Car />} />
+        <Route path="/users" element={<ListUsers />} />
           </Routes>
       </header>
       <ToastContainer
