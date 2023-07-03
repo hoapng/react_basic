@@ -1,9 +1,11 @@
 import React from "react";
 import Color from "../HOC/Color";
 import logo from "../../assets/images/logo512.png"
+import { connect } from "react-redux";
 
 class Home extends React.Component {
     render(){
+        console.log('check', this.props.dataRedux)
         return(
             <>
             <div>Hello from Hompage</div>
@@ -12,4 +14,7 @@ class Home extends React.Component {
         )
     }
 }
-export default Color(Home)
+const mapStateToProps = (state) => {
+    return {dataRedux: state.users} 
+}
+export default connect(mapStateToProps)(Color(Home))
