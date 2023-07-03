@@ -4,9 +4,10 @@ import Car from './Example/MyComponent';
 import ListToDo from './Todos/ListToDo';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-
+import Detail from './users/detail';
 import Nav from './Nav/Nav';
 import Home from './Example/Home';
+
 
 import {
   BrowserRouter,
@@ -30,6 +31,7 @@ function App() {
         <Route path="/todo" element={<ListToDo />} />
         <Route path="/about" element={<Car />} />
         <Route path="/users" element={<ListUsers />} />
+        <Route path="/users/:id" element={<Detail />} />
           </Routes>
       </header>
       <ToastContainer
